@@ -154,6 +154,10 @@ public abstract class Submission implements PublicContribution<SubmissionReferen
     /** The number of comments posted in this post. Includes removed comments. */
     @Json(name = "num_comments") public abstract Integer getCommentCount();
 
+    /** The ratio of upvotes compared to the total number of votes. Null in non-inspected submissions */
+    @Nullable
+    @Json(name = "upvote_ratio") public abstract Double getUpvoteRatio();
+
     @NotNull
     @Override
     public SubmissionReference toReference(@NotNull RedditClient reddit) {
